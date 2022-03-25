@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+    <div class="root" ng-app="appManagement" ng-controller="employeeController">
+
+        <form class="form" name="form" novalidate>
+            <div class="line">
+                <label for="">Username</label>
+                <div class="line__input">
+                    <input type="text" ng-model="user.username" placeholder="enter your username" name="username" required pattern="^[a-zA-Z0-9\_]{6,51}">
+                    <p class="ok"ng-show="form.username.$valid">V</p>
+                    <p class="not-ok" ng-show="form.username.$invalid && form.username.$dirty">X</p>
+                </div>
+            </div>
+
+            <div class="line">
+                <label for="">Password</label>
+                <div class="line__input">
+                    <input type="password" ng-model="user.password" placeholder="enter your password" name="password" required minlength="6" maxlength="51">
+                    <p class="ok"ng-show="form.password.$valid">V</p>
+                    <p class="not-ok" ng-show="form.password.$invalid && form.password.$dirty">X</p>
+                </div>
+            </div>
+
+            <button ng-click="status === 'add' ? add() : update()">{{status}}</button>
+        </form>
+
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>USERNAME</th>
+                    <th>PASSWORD</th>
+                    <th colspan="2">OPERATION</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr ng-repeat="user in userArray">
+                    <td>{{user.username}}</td>
+                    <td>{{user.password}}</td>
+                    <td class="btn-update" ng-click="fillForm(user.id)">update</td>
+                    <td class="btn-delete" ng-click="delete(user.id)">delete</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div ng-view></div>
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>

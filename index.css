@@ -1,0 +1,98 @@
+* {
+    padding: 0;
+    margin: 0;
+
+    box-sizing: border-box;
+    outline: none;
+}
+
+.root {
+    margin: auto;
+    display: flex;
+    margin: 10px;
+}
+
+.form {
+    border: 1px solid;
+    width: 26%;
+    margin: auto;
+    padding: 10px 10px 10px 23px;
+    position: fixed;
+}
+
+.line {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.line__input {
+    display: flex;
+}
+
+.ok {
+    color: green
+}
+
+.not-ok {
+    color: red
+}
+
+.line > div > input {
+    padding: 10px;
+    width: 286px;
+}
+
+table {
+    text-align: center;
+    margin-left: 28%;
+}
+
+td,th {
+    width: 160px;
+    padding: 10px
+}
+
+tr {
+    line-height: 30px;
+}
+
+.btn-update {
+    color: blue;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-delete {
+    color: red;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button {
+    width: 94%;
+    line-height: 30px;
+    font-size: 20px;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 900px;
+}
+
+thead {
+    background-color: #212529;
+    color: white
+}
+
+p {
+    font-size: 12px;
+    align-self: center;
+    margin-left: 5px;
+    font-weight: bold;
+}

@@ -22,7 +22,7 @@
             <div class="item" ng-repeat="item in items">
                 <input class="complete" type="checkbox" ng-model="item.complete" ng-checked="item.complete" ng-change="change(item)">
                 <p class="text-item">{{item.name}}</p>
-                <p class="btn-delete" ng-click="deleteItem(item.id)">X</p>
+                <p class="btn-delete" ng-click="deleteItem(item.id)">&times;</p>
             </div>
         </div>
     </div>
